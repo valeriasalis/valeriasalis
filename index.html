@@ -13,9 +13,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <div class="container">
-    <nav class="main-nav topnav color-primary-0-background sticky" id="myTopnav">
+    <nav class="main-nav topnav color-primary-0-background" id="myTopnav">
       <a href=""> Home </a>
-      <a href=""> About Me </a>
+      <a href="#about-me"> About Me </a>
       <a href=""> Resume </a>
       <a href=""> Web </a>
       <a href="" class=""> Contacts </a>
@@ -35,18 +35,36 @@
         }
       }
     </script>
-    <div class="zone cover text-over">
+    <div class="text-over">
       <img src="./img/cover1_b&w3.jpeg" alt="" class="img-cover">
-      <h1 class="centered">
-        Valeria Salis</h1>
+      <h1 class="centered"> Valeria Salis</h1>
     </div>
-    <div class="zone blue avatar">
+    <div class="blue description" id="about-me">
       <img src="./img/avatar_grey.jpeg" class="img-avatar" alt="">
       <p>
+        Ho sempre mostrato grande interesse per la tecnologia. <br>
+        A 4-5 anni smanettavo con i computer portatili giocattolo
+        ma l’emozione non era nulla a confronto di quando ho visto per la prima volta un computer fisso insieme alla
+        miriade di cavi che lo collegavano al case, alla tastiera, alla corrente e poi al Router (anch’esso
+        caratterizzato da una miriade di cavi ma anche lucine varie). <br><br>
+        Con sgomento di coloro che già mi dipingevano allo Scientifico ho proseguito seguendo le orme dell’informatica
+        iscrivendomi alle superiori all’indirizzo SIA - Sistemi Informativi Aziendali (ex indirizzo “Programmatori”).
+        Proseguo quindi sviluppando un’indole ibrida: passione per la tecnologia ma anche per la musica e per la
+        matematica di base associata all’economia aziendale. <br><br>
+        Tra un bilancio e l’altro, uno schema relazionale e una pagina web statica in HTML concludo il mio percorso con
+        il massimo dei voti e volo direttamente verso Milano per cominciare l’avventura universitaria presso
+        l’Università degli Studi di Milano, facoltà di Informatica Musicale. <br><br>
+        Secondo anno: corso di Programmazione Web. <br>
+        Ho un bel dejà-vù tra HTML, CSS, MySQL, PhpMyAdmin, JavaScript e
+        quant’altro. <br><br>
+        Circa a metà 2019 comincia la mia esperienza presso la <i>Mozart S.p.A</i> dove ho la possibilità di prendere le
+        basi imparate
+        precedentemente, renderle concrete e assorbire qualsiasi nozione e metodologia di lavoro affiancando e
+        collaborando con i Senior dell’azienda.
 
       </p>
     </div>
-    <div class="zone blue grid-wrapper">
+    <div class="blue grid-wrapper">
       <div class="img-card"> <img src="./img/data_storage_2_2.png" alt=""> </div>
       <div class="img-card"> <img src="./img/desktop_analytics_2.png" alt=""> </div>
       <div class="img-card"> <img src="./img/files_2.png" alt=""> </div>
@@ -61,7 +79,29 @@
 
 
 
+  <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+  <script>
+    //Get the button:
+    mybutton = document.getElementById("myBtn");
 
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
+
+  </script>
 </body>
 
 </html>
