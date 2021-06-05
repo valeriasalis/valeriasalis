@@ -45,6 +45,7 @@
 
 body {
   margin: auto 0;
+  font-family: "Roboto Mono", serif;
 }
 
 .container {
@@ -141,10 +142,9 @@ body {
 
 
 
-.cover-little-center {
+.avatar {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: center;  
   height: 600px;
   /*
   Here you can also use vh (viewport height) which defines the height of the 
@@ -152,8 +152,24 @@ body {
   */
 }
 
-.img-cover-center {
-  width: 30em;
+.img-avatar {
+  width: 10em;
+  height: 10em;
+  margin: 20px;
+}
+
+
+/* CONTROLLARE PERCHE' NON RESPONSIVE  */
+.text-over {  
+  text-align: center;
+  color: white;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .cover {
