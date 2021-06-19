@@ -7,17 +7,19 @@
   <link rel="stylesheet" type="text/css" href="./style.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono">
   <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 
 <body>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  <div class="container">
+  <div class="container" id="top">
     <nav class="main-nav topnav color-primary-0-background" id="myTopnav">
       <a href=""> Home </a>
       <a href="#about-me"> About Me </a>
       <a href=""> Resume </a>
-      <a href=""> Web </a>
+      <a href="#web"> Web </a>
       <a href="" class=""> Contacts </a>
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>
@@ -37,11 +39,15 @@
     </script>
     <div class="text-over">
       <img src="./img/cover1_b&w3.jpeg" alt="" class="img-cover">
-      <h1 class="centered"> Valeria Salis</h1>
+      <div class="centered">
+        <h1>Valeria Salis</h1>
+        <p>Trasformo il caffè in codice.<br>
+          In breve, sono Sviluppatore Web.</p>
+      </div>
     </div>
     <div class="blue description" id="about-me">
       <img src="./img/avatar_grey.jpeg" class="img-avatar" alt="">
-      <p>
+      <div class="description-text">
         Ho sempre mostrato grande interesse per la tecnologia. <br>
         A 4-5 anni smanettavo con i computer portatili giocattolo
         ma l’emozione non era nulla a confronto di quando ho visto per la prima volta un computer fisso insieme alla
@@ -62,9 +68,15 @@
         precedentemente, renderle concrete e assorbire qualsiasi nozione e metodologia di lavoro affiancando e
         collaborando con i Senior dell’azienda.
 
-      </p>
+      </div>
+    </div>
+
+    <div class="blue web-section" id="web">
+      <h1>Web</h1>
+      <p>Principali strumenti e linguaggi con cui lavoro </p>
     </div>
     <div class="blue grid-wrapper">
+
       <div class="img-card" style="background-color: #34334b;"> <img src="./img/icons/mysql.jpeg" alt=""> </div>
       <div class="img-card"> <img src="./img/icons/php.png" alt=""> </div>
       <div class="img-card" style="background-color: #34334b;"> <img src="./img/icons/yii2.png" alt=""> </div>
@@ -74,12 +86,16 @@
       <div class="img-card"> <img src="./img/icons/javascript.png" alt=""> </div>
       <div class="img-card" style="background-color: #34334b;"> <img src="./img/icons/aem.png" alt=""> </div>
     </div>
-    <footer class="zone yellow ">Footer</footer>
+    <footer class="zone yellow ">Footer
+
+
+      <button id="myBtn"> <a href="#top">Top</a> </button>
+    </footer>
+
+
   </div>
 
 
-
-  <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
   <script>
     //Get the button:
     mybutton = document.getElementById("myBtn");
@@ -95,12 +111,44 @@
       }
     }
 
-    // When the user clicks on the button, scroll to the top of the document
-    function topFunction() {
-      document.body.scrollTop = 0; // For Safari
-      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-    }
+  </script>
 
+  <script>
+    $('a[href*="#"]')
+      // Remove links that don't actually link to anything
+      .not('[href="#"]')
+      .not('[href="#0"]')
+      .click(function (event) {
+        // On-page links
+        if (
+          location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+          &&
+          location.hostname == this.hostname
+        ) {
+          // Figure out element to scroll to
+          var target = $(this.hash);
+          target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+          // Does a scroll target exist?
+          if (target.length) {
+            // Only prevent default if animation is actually gonna happen
+            event.preventDefault();
+            $('html, body').animate({
+              scrollTop: target.offset().top
+            }, 1000, function () {
+              // Callback after animation
+              // Must change focus!
+              var $target = $(target);
+              $target.focus();
+              if ($target.is(":focus")) { // Checking if the target was focused
+                return false;
+              } else {
+                $target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
+                $target.focus(); // Set focus again
+              };
+            });
+          }
+        }
+      });
   </script>
 </body>
 
